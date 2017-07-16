@@ -77,12 +77,30 @@ export default {
         console.log(response.data)
         if (response.data) {
           var token = response.data.token
+          var id = response.data.id
           localStorage.setItem('token', token)
+          localStorage.setItem('id', id)
           localStorage.setItem('name', response.data.name)
           this.$router.push('/')
         }
       })
       .catch((err) => { console.log(err) })
+    },
+    signup () {
+      var self = this
+      this.axios.post('http://localhost:3000/api/signup', {
+        username: self.userRegis.username,
+        email: self.userRegis.email,
+        password: self.userRegis.password
+      })
+      .then((response) => {
+        console.log(response.data)
+        alert('Register Success!! \n Welcome, ', +response.data.username)
+        self.userRegis.username = ''
+        self.userRegis.email = ''
+        self.userRegis.password = ''
+        this.$router.push('/auth')
+      })
     }
   }
 }
@@ -92,8 +110,6 @@ export default {
 label {
     display: flex;
     margin-bottom: 1.5rem;
-}
-.col-md-6 offset-md-3 {
 }
 .auth {
   border: 1px solid #e4e6e8;

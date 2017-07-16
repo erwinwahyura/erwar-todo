@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Auth from '@/components/Auth'
+import Add from '@/components/Add'
+import MyTodo from '@/components/MyTodo'
+import WelcomeTodo from '@/components/WelcomeTodo'
+import DetailTodo from '@/components/DetailTodo'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
@@ -19,6 +23,27 @@ export default new Router({
       path: '/auth',
       name: 'Auth',
       component: Auth
+    },
+    {
+      path: '/add',
+      name: 'Add',
+      component: Add
+    },
+    {
+      path: '/mytodo',
+      name: 'MyTodo',
+      component: MyTodo,
+      children: [
+        {
+          path: '',
+          component: WelcomeTodo
+        },
+        {
+          path: '/mytodo/:id',
+          component: DetailTodo,
+          props: true
+        }
+      ]
     }
   ]
 })

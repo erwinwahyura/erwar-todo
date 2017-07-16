@@ -25,9 +25,18 @@
             <b-dropdown-item to="#">RU</b-dropdown-item>
             <b-dropdown-item to="#">FA</b-dropdown-item>
           </b-nav-item-dropdown> -->
+          <b-nav-item-dropdown right>
+            <!-- Using button-content slot -->
+            <template slot="button-content">
+              <span style="font-weight: bold;">Todo</span>
+            </template>
+
+            <b-dropdown-item to="/add"> + Add</b-dropdown-item>
+            <b-dropdown-item to="/mytodo">My Todo</b-dropdown-item>
+            <!-- <b-dropdown-item to="#">Signout</b-dropdown-item> -->
+          </b-nav-item-dropdown>
 
           <b-nav-item-dropdown right>
-
             <!-- Using button-content slot -->
             <template slot="button-content">
               <span style="font-weight: bold;">User</span>
