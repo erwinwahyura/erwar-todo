@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <Navbar :islogin="islogin"></Navbar>
+    <Navbar :islogin="islogin" @logout="logout()"></Navbar>
     <br>
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view></router-view>
+    <router-view :islogin="islogin" @checkLogin="chekLogin()" @do-login="doLogin()"></router-view>
     <Footers></Footers>
   </div>
 </template>
@@ -20,6 +19,20 @@ export default {
   data () {
     return {
       islogin: false
+    }
+  },
+  methods: {
+    checkLogin () {
+      var check = localStorage.getItem('token')
+      if (check) {
+        this.islogin = true
+      }
+    },
+    logout () {
+      this.islogin = false
+    },
+    doLogin () {
+      this.islogin = true
     }
   },
   created () {
@@ -44,6 +57,6 @@ export default {
 .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #f5a5b0;
+    background-color: #31708f;
 }
 </style>

@@ -106,6 +106,7 @@ export default {
   },
   methods: {
     signout () {
+      this.$emit('logout')
       localStorage.clear()
       this.$router.push('/')
     }
@@ -115,6 +116,6 @@ export default {
 
 <style lang="css">
 .bg-success {
-    background-color: #f5a5b0 !important;
+    background-color: #31708f !important;
 }
 </style>

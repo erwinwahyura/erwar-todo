@@ -51,6 +51,7 @@ export default {
         self.add.title = ''
         self.add.description = ''
         alert('Add Todo Success!')
+        this.$router.push('/mytodo')
       })
       .catch((err) => { console.log(err) })
     }
@@ -61,23 +62,23 @@ export default {
 <style lang="css">
 .btn-success {
     color: #fff;
-    background-color: #f5a5b0;
-    border-color: #e4e6e8;
+    background-color:#31708f;
+    border-color: #31708f;
 }
 label {
     display: flex;
     margin-bottom: 1.5rem;
 }
 .add {
-  border: 1px solid #e4e6e8;
+  border: 1px solid #31708f;
 }
 .btn-success {
     color: #fff;
-    background-color: #f5a5b0;
-    border-color: #e4e6e8;
+    background-color:#31708f;
+    border-color: #31708f;
 }
 b-form-checkbox {
-  background-color: #f5a5b0;
-  border-color: #e4e6e8;
+  background-color:#31708f;
+  border-color: #31708f;
 }
 </style>

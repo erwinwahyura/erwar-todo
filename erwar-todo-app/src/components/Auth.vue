@@ -80,7 +80,9 @@ export default {
           var id = response.data.id
           localStorage.setItem('token', token)
           localStorage.setItem('id', id)
-          localStorage.setItem('name', response.data.name)
+          localStorage.setItem('username', response.data.username)
+          this.$emit('do-login')
+          // window.href.location = '/'
           this.$router.push('/')
         }
       })
@@ -112,11 +114,11 @@ label {
     margin-bottom: 1.5rem;
 }
 .auth {
-  border: 1px solid #e4e6e8;
+  border: 1px solid #31708f;
 }
 .btn-success {
     color: #fff;
-    background-color: #f5a5b0;
-    border-color: #e4e6e8;
+    background-color: #31708f;
+    border-color: #31708f;
 }
 </style>

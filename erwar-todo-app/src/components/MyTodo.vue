@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  props: ['islogin'],
   data () {
     return {
       listTodo: []
@@ -44,7 +45,7 @@ export default {
 .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #f5a5b0;
-    border-color: #c5aaae;
+    background-color: #31708f;
+    border-color: #31708f;
 }
 </style>

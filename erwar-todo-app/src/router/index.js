@@ -6,10 +6,7 @@ import Add from '@/components/Add'
 import MyTodo from '@/components/MyTodo'
 import WelcomeTodo from '@/components/WelcomeTodo'
 import DetailTodo from '@/components/DetailTodo'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
 
-Vue.use(VueAxios, axios)
 Vue.use(Router)
 
 export default new Router({
