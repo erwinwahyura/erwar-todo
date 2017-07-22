@@ -40,7 +40,7 @@ export default {
   methods: {
     addTodo () {
       var self = this
-      this.axios.post('http://localhost:3000/api/todos', {
+      this.axios.post('http://ec2-54-255-204-49.ap-southeast-1.compute.amazonaws.com/api/todos', {
         title: self.add.title,
         description: self.add.description,
         completed: self.state,

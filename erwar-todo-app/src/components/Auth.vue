@@ -67,7 +67,7 @@ export default {
   methods: {
     signin () {
       var self = this
-      this.axios.post('http://localhost:3000/api/signin', {
+      this.axios.post('http://ec2-54-255-204-49.ap-southeast-1.compute.amazonaws.com/api/signin', {
         username: self.user.username,
         password: self.user.password
       })
@@ -80,7 +80,7 @@ export default {
           var id = response.data.id
           localStorage.setItem('token', token)
           localStorage.setItem('id', id)
-          localStorage.setItem('username', response.data.username)
+          localStorage.setItem('username', response.data.name)
           this.$emit('do-login')
           // window.href.location = '/'
           this.$router.push('/')
@@ -90,7 +90,7 @@ export default {
     },
     signup () {
       var self = this
-      this.axios.post('http://localhost:3000/api/signup', {
+      this.axios.post('http://ec2-54-255-204-49.ap-southeast-1.compute.amazonaws.com/api/signup', {
         username: self.userRegis.username,
         email: self.userRegis.email,
         password: self.userRegis.password

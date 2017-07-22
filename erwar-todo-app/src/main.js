@@ -11,9 +11,9 @@ import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
 
-// Vue.prototype.$axios = axios.create({
-//   // baseURL: 'http://ec2-54-255-204-49.ap-southeast-1.compute.amazonaws.com/'
-// })
+Vue.prototype.$axios = axios.create({
+  baseURL: 'http://ec2-54-255-204-49.ap-southeast-1.compute.amazonaws.com/'
+})
 
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false

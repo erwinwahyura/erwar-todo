@@ -31,7 +31,7 @@ export default {
     id (newId) {
       this.getTodo()
       var self = this
-      this.axios.get('http://localhost:3000/api/todos/' + self.id)
+      this.axios.get('http://ec2-54-255-204-49.ap-southeast-1.compute.amazonaws.com/api/todos/' + self.id)
       .then((response) => {
         console.log(response.data)
         self.todo = response.data
@@ -49,7 +49,7 @@ export default {
   methods: {
     getTodo () {
       var self = this
-      this.axios.get('http://localhost:3000/api/todos/' + self.id)
+      this.axios.get('http://ec2-54-255-204-49.ap-southeast-1.compute.amazonaws.com/api/todos/' + self.id)
       .then((response) => {
         console.log(response.data)
         self.todo = response.data
@@ -57,8 +57,9 @@ export default {
       .catch((err) => { console.log(err) })
     },
     remove (ids) {
-      this.axios.delete('http://localhost:3000/api/todos/' + ids)
+      this.$axios.delete('http://ec2-54-255-204-49.ap-southeast-1.compute.amazonaws.com/api/todos/' + ids)
       .then((response) => {
+        console.log(response.data)
         alert(response.data)
         this.getTodo()
       })

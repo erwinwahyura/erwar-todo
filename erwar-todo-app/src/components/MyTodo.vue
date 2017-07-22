@@ -27,7 +27,7 @@ export default {
   methods: {
     getListTodo () {
       var self = this
-      this.axios.get('http://localhost:3000/api/todos')
+      this.axios.get('http://ec2-54-255-204-49.ap-southeast-1.compute.amazonaws.com/api/todos')
       .then((response) => {
         console.log(response.data)
         self.listTodo = response.data
